@@ -4,10 +4,12 @@ apt-get -y install build-essential
 apt-get -y install git-core
 
 # And now install rbenv
-git clone git://github.com/sstephenson/rbenv.git .rbenv
+git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+
+# Add rbenv to your path
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
 echo 'eval "$(rbenv init -)"' >> .bash_profile
-exec
+source ~/.bash_profile
 
 # Install ruby-build
 pushd /tmp
