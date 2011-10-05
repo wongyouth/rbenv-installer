@@ -4,6 +4,10 @@ apt-get -y upgrade
 apt-get -y install build-essential
 apt-get -y install git-core
 
+# Extras for RubyGems and Rails:
+apt-get -y install zlib1g-dev
+apt-get -y install libssl-dev libsqlite3-dev
+
 # Install rbenv
 git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
 
