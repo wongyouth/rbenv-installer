@@ -27,7 +27,7 @@ chmod +x /etc/profile.d/rbenv.sh
 source /etc/profile.d/rbenv.sh
 
 # Install ruby-build:
-pushd /tmp
+pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
   git clone git://github.com/sstephenson/ruby-build.git
   cd ruby-build
   ./install.sh
