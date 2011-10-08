@@ -16,8 +16,12 @@ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone git://github.com/sstephenson/rbenv-vars.git /usr/local/rbenv/plugins/rbenv-vars
 
 # Add rbenv to the path:
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
-echo 'eval "$(rbenv init -)"' >> .bash_profile
+cat << EOF >> ~/.bash_profile
+# rbenv setup
+export PATH="\$HOME/.rbenv/bin:\$PATH"
+eval "\$(rbenv init -)"
+EOF
+
 source ~/.bash_profile
 
 # Install ruby-build:
