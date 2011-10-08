@@ -22,6 +22,7 @@ export PATH="\$HOME/.rbenv/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
 
+# Reload the environment:
 source ~/.bash_profile
 
 # Install ruby-build:

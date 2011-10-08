@@ -23,6 +23,7 @@ export PATH="\$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
 
+# Reload the environment:
 chmod +x /etc/profile.d/rbenv.sh
 source /etc/profile.d/rbenv.sh
 
