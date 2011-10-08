@@ -9,8 +9,11 @@ apt-get -y install zlib1g-dev
 apt-get -y install libssl-dev libsqlite3-dev
 apt-get -y install libreadline5-dev
 
-# Install rbenv
+# Install rbenv:
 git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
+
+# Install rbenv plugins:
+git clone git://github.com/sstephenson/rbenv-vars.git /usr/local/rbenv/plugins/rbenv-vars
 
 # Add rbenv to the path:
 echo '# rbenv setup' > /etc/profile.d/rbenv.sh

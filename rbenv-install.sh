@@ -12,6 +12,9 @@ apt-get -y install libreadline5-dev
 # Install rbenv:
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
 
+# Install rbenv plugins:
+git clone git://github.com/sstephenson/rbenv-vars.git /usr/local/rbenv/plugins/rbenv-vars
+
 # Add rbenv to the path:
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
 echo 'eval "$(rbenv init -)"' >> .bash_profile
