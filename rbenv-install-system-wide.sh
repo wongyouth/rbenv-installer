@@ -16,7 +16,7 @@ git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
 git clone git://github.com/sstephenson/rbenv-vars.git /usr/local/rbenv/plugins/rbenv-vars
 
 # Add rbenv to the path:
-cat << EOF > /tmp/rbenv.sh
+cat << EOF > /etc/profile.d/rbenv.sh
 # rbenv setup
 export RBENV_ROOT=/usr/local/rbenv
 export PATH="\$RBENV_ROOT/bin:\$PATH"
