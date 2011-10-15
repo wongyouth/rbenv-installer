@@ -19,7 +19,7 @@ git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_ROOT/plugins/rbenv-
 # Add rbenv to the path:
 cat << EOF > $PROFILE
 # rbenv setup
-export RBENV_ROOT="\$RBENV_ROOT"
+export RBENV_ROOT="$RBENV_ROOT"
 export PATH="\$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
