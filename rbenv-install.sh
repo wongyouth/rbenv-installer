@@ -1,13 +1,13 @@
 # Update, upgrade and install development tools:
-apt-get update
-apt-get -y upgrade
-apt-get -y install build-essential
-apt-get -y install git-core
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install build-essential
+sudo apt-get -y install git-core
 
 # Extras for RubyGems and Rails:
-apt-get -y install zlib1g-dev
-apt-get -y install libssl-dev libsqlite3-dev
-apt-get -y install libreadline5-dev
+sudo apt-get -y install zlib1g-dev
+sudo apt-get -y install libssl-dev libsqlite3-dev
+sudo apt-get -y install libreadline5-dev
 
 # Install rbenv:
 git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
