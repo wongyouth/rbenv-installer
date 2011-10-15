@@ -28,11 +28,12 @@ export PATH="\$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
 
-# Reload the environment:
-if (( UID == 0 ))
-then
+# Make profile executable:
+if (( UID == 0 )) ; then
   chmod +x $PROFILE
 fi
+
+# Reload the environment:
 source $PROFILE
 
 # Install ruby-build:
