@@ -41,6 +41,3 @@ if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
     PREFIX=$RBENV_ROOT ./install.sh
   popd
 fi
-
-# Reload the environment:
-source $PROFILE
