@@ -29,7 +29,7 @@ eval "\$(rbenv init -)"
 EOF
 
 # Reload the environment:
-source $PROFILE
+source "${PROFILE}"
 
 # Install ruby-build:
 if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
