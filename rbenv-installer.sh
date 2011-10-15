@@ -28,11 +28,6 @@ export PATH="\$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
 
-# Make profile executable:
-if (( UID == 0 )) ; then
-  chmod +x $PROFILE
-fi
-
 # Reload the environment:
 source $PROFILE
 
