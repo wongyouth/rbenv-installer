@@ -29,7 +29,7 @@ source ~/.bash_profile
 pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
   git clone git://github.com/sstephenson/ruby-build.git
   cd ruby-build
-  ./install.sh
+  PREFIX=~/.rbenv ./install.sh
 popd
 
 # Install Ruby 1.9.2-p290:
