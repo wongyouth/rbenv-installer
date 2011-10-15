@@ -26,6 +26,7 @@ EOF
 
 # Reload the environment:
 if (( UID == 0 ))
+then
   chmod +x $PROFILE
 fi
 source $PROFILE
