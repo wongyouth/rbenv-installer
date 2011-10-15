@@ -28,9 +28,6 @@ export PATH="$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
 
-# Reload the environment:
-source $PROFILE
-
 # Install ruby-build:
 if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
   pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
@@ -40,5 +37,5 @@ if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
   popd
 fi
 
-# Rehash:
-rbenv rehash
+# Reload the environment:
+source $PROFILE
