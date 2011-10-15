@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # We are using Git so verify first if the package is installed:
-if [ ! $(which nogit) ]; then
+if [ ! $(which git) ]; then
   echo "Git is not installed."
   exit
 fi
