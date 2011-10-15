@@ -38,9 +38,5 @@ pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
   PREFIX=$RBENV_ROOT ./install.sh
 popd
 
-# Install Ruby 1.9.2-p290 and make it global:
-rbenv install 1.9.2-p290
-rbenv global 1.9.2-p290
-
 # Rehash:
 rbenv rehash
