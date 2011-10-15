@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Update, upgrade and install development tools:
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -9,16 +11,19 @@ sudo apt-get -y install zlib1g-dev
 sudo apt-get -y install libssl-dev libsqlite3-dev
 sudo apt-get -y install libreadline5-dev
 
+# Set where rbenv is going to be installed:
+RBENV_ROOT=/usr/local/rbenv
+
 # Install rbenv:
-sudo git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
+sudo git clone git://github.com/sstephenson/rbenv.git $RBENV_ROOT
 
 # Install rbenv plugins:
-sudo git clone git://github.com/sstephenson/rbenv-vars.git /usr/local/rbenv/plugins/rbenv-vars
+sudo git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_ROOT/plugins/rbenv-vars
 
 # Add rbenv to the path:
 sudo cat << EOF > /etc/profile.d/rbenv.sh
 # rbenv setup
-export RBENV_ROOT=/usr/local/rbenv
+export RBENV_ROOT="\$RBENV_ROOT"
 export PATH="\$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
