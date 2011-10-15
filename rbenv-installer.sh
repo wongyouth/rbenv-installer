@@ -36,7 +36,7 @@ fi
 source $PROFILE
 
 # Install ruby-build:
-if [ ! -d $RBENV_ROOT/bin/ruby-build ] ; then
+if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
   pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
     git clone git://github.com/sstephenson/ruby-build.git
     cd ruby-build
