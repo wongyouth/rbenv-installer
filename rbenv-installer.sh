@@ -17,17 +17,19 @@ git clone git://github.com/sstephenson/rbenv.git $RBENV_ROOT
 git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_ROOT/plugins/rbenv-vars
 
 # Add rbenv to the path:
-cat << EOF > $PROFILE
+PROFILE_DATA="
 # rbenv setup
-export RBENV_ROOT="$RBENV_ROOT"
-export PATH="\$RBENV_ROOT/bin:\$PATH"
-eval "\$(rbenv init -)"
-EOF
+export RBENV_ROOT=\"$RBENV_ROOT\"
+export PATH=\"\$RBENV_ROOT/bin:\$PATH\"
+eval \"\$(rbenv init -)\""
 
 # Reload the environment:
 if (( UID == 0 ))
 then
+  cat "$PROFILE_DATA" > $PROFILE
   chmod +x $PROFILE
+else
+  cat "$PROFILE_DATA" >> $PROFILE
 fi
 source $PROFILE
 
