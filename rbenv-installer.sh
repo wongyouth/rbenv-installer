@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# We are using Git so verify first if the package is installed:
+if [ ! $(which nogit) ]; then
+  echo "Git is not installed."
+  exit 1
+fi
+
 # Set where rbenv is going to be installed:
 if (( UID == 0 )) ; then
   RBENV_ROOT="/usr/local/rbenv"
