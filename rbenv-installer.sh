@@ -24,12 +24,12 @@ fi
 cat << EOF > $PROFILE
 # rbenv setup
 export RBENV_ROOT="$RBENV_ROOT"
-export PATH="\$RBENV_ROOT/bin:\$PATH"
+export PATH="$RBENV_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
 
 # Reload the environment:
-source "${PROFILE}"
+source $PROFILE
 
 # Install ruby-build:
 if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
