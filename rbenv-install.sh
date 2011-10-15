@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 
-# Update, upgrade and install development tools:
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y install build-essential
-sudo apt-get -y install git-core
-
-# Extras for RubyGems and Rails:
-sudo apt-get -y install zlib1g-dev
-sudo apt-get -y install libssl-dev libsqlite3-dev
-sudo apt-get -y install libreadline5-dev
-
 # Set where rbenv is going to be installed:
-RBENV_ROOT=$HOME/.rbenv
+if (( UID == 0 ))
+then
+  RBENV_ROOT="/usr/local/rbenv"
+  PROFILE="/etc/profile.d/rbenv.sh"
+else
+  RBENV_ROOT="${HOME}/.rbenv"
+  PROFILE="${HOME}/.bash_profile"
+fi
 
 # Install rbenv:
 git clone git://github.com/sstephenson/rbenv.git $RBENV_ROOT
@@ -21,7 +17,7 @@ git clone git://github.com/sstephenson/rbenv.git $RBENV_ROOT
 git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_ROOT/plugins/rbenv-vars
 
 # Add rbenv to the path:
-cat << EOF >> ~/.bash_profile
+cat << EOF > $PROFILE
 # rbenv setup
 export RBENV_ROOT="\$RBENV_ROOT"
 export PATH="\$RBENV_ROOT/bin:\$PATH"
@@ -29,7 +25,10 @@ eval "\$(rbenv init -)"
 EOF
 
 # Reload the environment:
-source ~/.bash_profile
+if (( UID == 0 ))
+  chmod +x $PROFILE
+fi
+source $PROFILE
 
 # Install ruby-build:
 pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
@@ -38,7 +37,7 @@ pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
   PREFIX=$RBENV_ROOT ./install.sh
 popd
 
-# Install Ruby 1.9.2-p290:
+# Install Ruby 1.9.2-p290 and make it global:
 rbenv install 1.9.2-p290
 rbenv global 1.9.2-p290
 
