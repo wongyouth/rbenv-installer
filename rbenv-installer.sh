@@ -36,11 +36,13 @@ fi
 source $PROFILE
 
 # Install ruby-build:
-pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
-  git clone git://github.com/sstephenson/ruby-build.git
-  cd ruby-build
-  PREFIX=$RBENV_ROOT ./install.sh
-popd
+if [ ! -d $RBENV_ROOT/bin/ruby-build ] ; then
+  pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
+    git clone git://github.com/sstephenson/ruby-build.git
+    cd ruby-build
+    PREFIX=$RBENV_ROOT ./install.sh
+  popd
+fi
 
 # Rehash:
 rbenv rehash
