@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # Set where rbenv is going to be installed:
-if (( UID == 0 ))
-then
+if (( UID == 0 )) ; then
   RBENV_ROOT="/usr/local/rbenv"
   PROFILE="/etc/profile.d/rbenv.sh"
 else
