@@ -3,7 +3,7 @@
 # We are using Git so verify first if the package is installed:
 if [ ! $(which nogit) ]; then
   echo "Git is not installed."
-  exit 1
+  exit
 fi
 
 # Set where rbenv is going to be installed:
