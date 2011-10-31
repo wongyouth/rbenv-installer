@@ -10,9 +10,11 @@ fi
 if (( UID == 0 )) ; then
   RBENV_ROOT="/usr/local/rbenv"
   PROFILE="/etc/profile.d/rbenv.sh"
+  RUBY_BUILD_ROOT="/usr/local/ruby-build"
 else
   RBENV_ROOT="${HOME}/.rbenv"
   PROFILE="${HOME}/.bash_profile"
+  RUBY_BUILD_ROOT="${HOME}/.ruby-build"
 fi
 
 # Install rbenv:
@@ -26,18 +28,14 @@ if [ ! -d $RBENV_ROOT/plugins/rbenv-vars ] ; then
 fi
 
 # Install ruby-build:
-if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
-  pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
-    git clone git://github.com/sstephenson/ruby-build.git
-    cd ruby-build
-    PREFIX=$RBENV_ROOT ./install.sh
-  popd
+if [ ! -d $RUBY_BUILD_ROOT ] ; then
+  git clone git://github.com/sstephenson/ruby-build.git $RUBY_BUILD_ROOT
 fi
 
 # Add rbenv to the path:
 cat << EOF > $PROFILE
 # rbenv setup
 export RBENV_ROOT="$RBENV_ROOT"
-export PATH="$RBENV_ROOT/bin:\$PATH"
+export PATH="$RBENV_ROOT/bin:$RUBY_BUILD_ROOT/bin:\$PATH"
 eval "\$(rbenv init -)"
 EOF
