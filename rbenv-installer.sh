@@ -16,7 +16,7 @@ else
 fi
 
 # Install rbenv:
-if [ ! -f $RBENV_ROOT/bin/rbenv ] ; then
+if [ ! -d $RBENV_ROOT ] ; then
   git clone git://github.com/sstephenson/rbenv.git $RBENV_ROOT
 fi
 
