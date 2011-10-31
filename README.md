@@ -1,8 +1,14 @@
 # rbenv install
 
-Install the latest release:
+Install [rbenv] and friends by running:
 
-    $ bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/rbenv-installer.sh)
+    bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/rbenv-installer.sh)
+
+Update [rbenv] and friends by running:
+
+    bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/rbenv-installer.sh)
+
+Need to update packages? Run it again.
 
 Reload the environment:
 
@@ -17,3 +23,5 @@ Install Ruby 1.9.3-p0 and make it global:
     rbenv global 1.9.3-p0
 
 **rbenv** source code is available at <https://github.com/sstephenson/rbenv>
+
+[rbenv]: https://github.com/sstephenson/rbenv
