@@ -24,7 +24,7 @@ else
   pushd $RBENV_ROOT; git pull; popd
 fi
 
-# Install rbenv plugins:
+# Install rbenv-vars:
 $RBENV_VARS_ROOT="${RBENV_ROOT}/plugins/rbenv-vars"
 if [ ! -d $RBENV_VARS_ROOT ] ; then
   git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_VARS_ROOT
