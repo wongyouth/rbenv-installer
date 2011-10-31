@@ -8,8 +8,6 @@ Update [rbenv] and friends by running:
 
     bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/rbenv-installer.sh)
 
-Need to update packages? Run it again.
-
 Reload the environment:
 
     $ # If you are not root!
