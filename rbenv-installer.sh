@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# We are using Git so verify first if the package is installed:
+# Verify Git is installed, otherwise suggest running bootstrap:
 if [ ! $(which git) ]; then
   echo "Git is not installed. To install required packages consider running:"
   echo
