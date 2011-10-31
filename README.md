@@ -11,9 +11,9 @@ Reload the environment:
     $ # If you are root!
     $ source /etc/profile.d/rbenv.sh
 
-Install Ruby 1.9.2-p290 and make it global:
+Install Ruby 1.9.3-p0 and make it global:
 
-    rbenv install 1.9.2-p290
-    rbenv global 1.9.2-p290
+    rbenv install 1.9.3-p0
+    rbenv global 1.9.3-p0
 
 **rbenv** source code is available at <https://github.com/sstephenson/rbenv>
