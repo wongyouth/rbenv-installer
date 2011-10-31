@@ -47,7 +47,7 @@ for plugin in ${PLUGINS[@]} ; do
 
   RBENV_PLUGIN_ROOT="${RBENV_ROOT}/plugins/$VALUE"
   if [ ! -d "$RBENV_PLUGIN_ROOT" ] ; then
-    git clone git://github.com/$KEY/$VALUE.git $VALUE
+    git clone git://github.com/$KEY/$VALUE.git $RBENV_PLUGIN_ROOT
   else
     pushd $RBENV_PLUGIN_ROOT; git pull; popd
   fi
