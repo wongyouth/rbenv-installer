@@ -25,14 +25,6 @@ if [ ! -d $RBENV_ROOT/plugins/rbenv-vars ] ; then
   git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_ROOT/plugins/rbenv-vars
 fi
 
-# Add rbenv to the path:
-cat << EOF > $PROFILE
-# rbenv setup
-export RBENV_ROOT="$RBENV_ROOT"
-export PATH="$RBENV_ROOT/bin:\$PATH"
-eval "\$(rbenv init -)"
-EOF
-
 # Install ruby-build:
 if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
   pushd $(mktemp -d /tmp/ruby-build.XXXXXXXXXX)
@@ -41,3 +33,11 @@ if [ ! -f $RBENV_ROOT/bin/ruby-build ] ; then
     PREFIX=$RBENV_ROOT ./install.sh
   popd
 fi
+
+# Add rbenv to the path:
+cat << EOF > $PROFILE
+# rbenv setup
+export RBENV_ROOT="$RBENV_ROOT"
+export PATH="$RBENV_ROOT/bin:\$PATH"
+eval "\$(rbenv init -)"
+EOF
