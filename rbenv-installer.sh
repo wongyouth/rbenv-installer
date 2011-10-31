@@ -32,6 +32,30 @@ else
   pushd $RBENV_VARS_ROOT; git pull; popd
 fi
 
+# Install rbenv-gemset:
+RBENV_GEMSET_ROOT="${RBENV_ROOT}/plugins/rbenv-gemset"
+if [ ! -d $RBENV_GEMSET_ROOT ] ; then
+  git clone git://github.com/jamis/rbenv-gemset.git $RBENV_GEMSET_ROOT
+else
+  pushd $RBENV_GEMSET_ROOT; git pull; popd
+fi
+
+# Install rbenv-each:
+RBENV_EACH_ROOT="${RBENV_ROOT}/plugins/rbenv-each"
+if [ ! -d $RBENV_EACH_ROOT ] ; then
+  git clone git://github.com/chriseppstein/rbenv-each.git $RBENV_EACH_ROOT
+else
+  pushd $RBENV_EACH_ROOT; git pull; popd
+fi
+
+# Install rbenv-bundler:
+RBENV_BUNDLER_ROOT="${RBENV_ROOT}/plugins/rbenv-bundler"
+if [ ! -d $RBENV_BUNDLER_ROOT ] ; then
+  git clone git://github.com/carsomyr/rbenv-bundler.git $RBENV_BUNDLER_ROOT
+else
+  pushd $RBENV_BUNDLER_ROOT; git pull; popd
+fi
+
 # Install ruby-build:
 if [ ! -d "$RUBY_BUILD_ROOT" ] ; then
   git clone git://github.com/sstephenson/ruby-build.git $RUBY_BUILD_ROOT
