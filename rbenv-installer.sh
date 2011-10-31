@@ -20,17 +20,23 @@ fi
 # Install rbenv:
 if [ ! -d $RBENV_ROOT ] ; then
   git clone git://github.com/sstephenson/rbenv.git $RBENV_ROOT
+else
+  pushd $RBENV_ROOT; git pull; popd
 fi
 
 # Install rbenv plugins:
 $RBENV_VARS_ROOT="${RBENV_ROOT}/plugins/rbenv-vars"
 if [ ! -d $RBENV_VARS_ROOT ] ; then
   git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_VARS_ROOT
+else
+  pushd $RBENV_VARS_ROOT; git pull; popd
 fi
 
 # Install ruby-build:
 if [ ! -d $RUBY_BUILD_ROOT ] ; then
   git clone git://github.com/sstephenson/ruby-build.git $RUBY_BUILD_ROOT
+else
+  pushd $RUBY_BUILD_ROOT; git pull; popd
 fi
 
 # Add rbenv to the path:
