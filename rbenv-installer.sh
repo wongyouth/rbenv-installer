@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # We are using Git so verify first if the package is installed:
-if [ ! $(which gito) ]; then
+if [ ! $(which git) ]; then
   echo "Git is not installed. To install required packages consider running:"
   echo
   echo "    bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/bootstrap.sh)"
