@@ -23,8 +23,9 @@ if [ ! -d $RBENV_ROOT ] ; then
 fi
 
 # Install rbenv plugins:
-if [ ! -d $RBENV_ROOT/plugins/rbenv-vars ] ; then
-  git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_ROOT/plugins/rbenv-vars
+$RBENV_VARS_ROOT="${RBENV_ROOT}/plugins/rbenv-vars"
+if [ ! -d $RBENV_VARS_ROOT ] ; then
+  git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_VARS_ROOT
 fi
 
 # Install ruby-build:
