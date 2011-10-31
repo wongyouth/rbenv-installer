@@ -24,37 +24,25 @@ else
   pushd $RBENV_ROOT; git pull; popd
 fi
 
-# Install rbenv-vars:
-RBENV_VARS_ROOT="${RBENV_ROOT}/plugins/rbenv-vars"
-if [ ! -d "$RBENV_VARS_ROOT" ] ; then
-  git clone git://github.com/sstephenson/rbenv-vars.git $RBENV_VARS_ROOT
-else
-  pushd $RBENV_VARS_ROOT; git pull; popd
-fi
+# Install plugins:
+PLUGINS=( "sstephenson:rbenv-vars"
+          "jamis:rbenv-gemset"
+          "chriseppstein:rbenv-each"
+          "carsomyr:rbenv-bundler" )
 
-# Install rbenv-gemset:
-RBENV_GEMSET_ROOT="${RBENV_ROOT}/plugins/rbenv-gemset"
-if [ ! -d $RBENV_GEMSET_ROOT ] ; then
-  git clone git://github.com/jamis/rbenv-gemset.git $RBENV_GEMSET_ROOT
-else
-  pushd $RBENV_GEMSET_ROOT; git pull; popd
-fi
+for plugin in ${PLUGINS[@]} ; do
 
-# Install rbenv-each:
-RBENV_EACH_ROOT="${RBENV_ROOT}/plugins/rbenv-each"
-if [ ! -d $RBENV_EACH_ROOT ] ; then
-  git clone git://github.com/chriseppstein/rbenv-each.git $RBENV_EACH_ROOT
-else
-  pushd $RBENV_EACH_ROOT; git pull; popd
-fi
+  KEY=${plugin%%:*}
+  VALUE=${plugin#*:}
 
-# Install rbenv-bundler:
-RBENV_BUNDLER_ROOT="${RBENV_ROOT}/plugins/rbenv-bundler"
-if [ ! -d $RBENV_BUNDLER_ROOT ] ; then
-  git clone git://github.com/carsomyr/rbenv-bundler.git $RBENV_BUNDLER_ROOT
-else
-  pushd $RBENV_BUNDLER_ROOT; git pull; popd
-fi
+  RBENV_PLUGIN_ROOT="${RBENV_ROOT}/plugins/$VALUE"
+  if [ ! -d "$RBENV_PLUGIN_ROOT" ] ; then
+    git clone git://github.com/$KEY/$VALUE.git $VALUE
+  else
+    pushd $RBENV_PLUGIN_ROOT; git pull; popd
+  fi
+
+done
 
 # Install ruby-build:
 if [ ! -d "$RUBY_BUILD_ROOT" ] ; then
