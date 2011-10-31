@@ -24,6 +24,13 @@ else
   pushd $RBENV_ROOT; git pull; popd
 fi
 
+# Install ruby-build:
+if [ ! -d "$RUBY_BUILD_ROOT" ] ; then
+  git clone git://github.com/sstephenson/ruby-build.git $RUBY_BUILD_ROOT
+else
+  pushd $RUBY_BUILD_ROOT; git pull; popd
+fi
+
 # Install plugins:
 PLUGINS=( "sstephenson:rbenv-vars"
           "jamis:rbenv-gemset"
@@ -43,13 +50,6 @@ for plugin in ${PLUGINS[@]} ; do
   fi
 
 done
-
-# Install ruby-build:
-if [ ! -d "$RUBY_BUILD_ROOT" ] ; then
-  git clone git://github.com/sstephenson/ruby-build.git $RUBY_BUILD_ROOT
-else
-  pushd $RUBY_BUILD_ROOT; git pull; popd
-fi
 
 if [ ! -f "$PROFILE" ] ; then
   # Add rbenv to the path:
