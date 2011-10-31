@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install build-essential
-sudo apt-get -y install git-core
+sudo apt-get -y install git-core curl
 
 # Extras for RubyGems and Rails:
 sudo apt-get -y install zlib1g-dev libssl-dev
