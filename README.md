@@ -1,10 +1,6 @@
 # rbenv install
 
-Install [rbenv] and friends by running:
-
-    bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/rbenv-installer.sh)
-
-Update [rbenv] and friends by running:
+Install/Update [rbenv] and friends by running:
 
     bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/rbenv-installer.sh)
 
