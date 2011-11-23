@@ -4,7 +4,7 @@
 if [ ! $(which git) ]; then
   echo "Git is not installed."
   echo
-  echo "If you are in an Ubuntu box consider running the following script to install required packages:
+  echo "If you are in an Ubuntu box consider running the following script to install required packages:"
   echo
   echo "    bash < <(curl -s https://raw.github.com/fesplugas/rbenv-installer/master/bootstrap.sh)"
   echo
