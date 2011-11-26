@@ -10,11 +10,9 @@ fi
 if (( UID == 0 )) ; then
   RBENV_ROOT="/usr/local/rbenv"
   PROFILE="/etc/profile.d/rbenv.sh"
-  RUBY_BUILD_ROOT="/usr/local/ruby-build"
 else
   RBENV_ROOT="${HOME}/.rbenv"
   PROFILE="${HOME}/.bash_profile"
-  RUBY_BUILD_ROOT="${HOME}/.ruby-build"
 fi
 
 # Install rbenv:
