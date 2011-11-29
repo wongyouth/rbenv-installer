@@ -26,8 +26,7 @@ fi
 PLUGINS=( "sstephenson:rbenv-vars"
           "sstephenson:ruby-build"
           "jamis:rbenv-gemset"
-          "chriseppstein:rbenv-each"
-          "carsomyr:rbenv-bundler" )
+          "chriseppstein:rbenv-each" )
 
 for plugin in ${PLUGINS[@]} ; do
 
