@@ -1,4 +1,5 @@
-# rbenv install
+rbenv install
+=============
 
 Install and/or update [rbenv] and friends by running:
 
