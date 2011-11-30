@@ -41,14 +41,3 @@ for plugin in ${PLUGINS[@]} ; do
   fi
 
 done
-
-if [ ! -f "$PROFILE" ] ; then
-  echo "=> Adding rbenv to the path. ($PROFILE)"
-  # Add rbenv to the path:
-  cat << EOF > $PROFILE
-# rbenv setup
-export RBENV_ROOT="$RBENV_ROOT"
-export PATH="$RBENV_ROOT/bin:\$PATH"
-eval "\$(rbenv init -)"
-EOF
-fi
