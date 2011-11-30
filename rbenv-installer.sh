@@ -6,8 +6,7 @@ if [ ! $(which git) ]; then
   exit
 fi
 
-RBENV_ROOT="${HOME}/.rbenv"
-PROFILE="${HOME}/.bash_profile"
+RBENV_ROOT="$HOME/.rbenv"
 
 # Install rbenv:
 if [ ! -d "$RBENV_ROOT" ] ; then
