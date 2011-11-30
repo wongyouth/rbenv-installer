@@ -33,3 +33,12 @@ for plugin in ${PLUGINS[@]} ; do
   fi
 
 done
+
+echo "
+Remember to add to your '.bash_profile':
+
+    if [[ -d \$HOME/.rbenv ]]; then
+      export PATH=\"\$HOME/.rbenv/bin:\$PATH\"
+      eval \"\$(rbenv init -)\"
+    fi
+"
