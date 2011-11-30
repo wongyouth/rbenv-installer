@@ -33,13 +33,14 @@ for plugin in ${PLUGINS[@]} ; do
 
 done
 
-if [ ! -d "$HOME/.rbenv" ] ; then
+# Show help if `.rbenv` is not in the path:
+if [ ! $(which rbenv) ]; then
   echo "
-  Remember to add to your '.bash_profile':
+Seems you still have not added 'rbenv' to the load path:
 
-      if [[ -d \$HOME/.rbenv ]]; then
-        export PATH=\"\$HOME/.rbenv/bin:\$PATH\"
-        eval \"\$(rbenv init -)\"
-      fi
+    if [[ -d \$HOME/.rbenv ]]; then
+      export PATH=\"\$HOME/.rbenv/bin:\$PATH\"
+      eval \"\$(rbenv init -)\"
+    fi
   "
 fi
