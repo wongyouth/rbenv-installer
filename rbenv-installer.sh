@@ -6,14 +6,8 @@ if [ ! $(which git) ]; then
   exit
 fi
 
-# Set where rbenv is going to be installed:
-if (( UID == 0 )) ; then
-  RBENV_ROOT="/usr/local/rbenv"
-  PROFILE="/etc/profile.d/rbenv.sh"
-else
-  RBENV_ROOT="${HOME}/.rbenv"
-  PROFILE="${HOME}/.bash_profile"
-fi
+RBENV_ROOT="${HOME}/.rbenv"
+PROFILE="${HOME}/.bash_profile"
 
 # Install rbenv:
 if [ ! -d "$RBENV_ROOT" ] ; then
